@@ -1,3 +1,5 @@
+package com.example.restaurantorderingsystem;
+
 public class User {
     private String username;
     private String password;
@@ -7,7 +9,11 @@ public class User {
         this.password = password;
     }
 
-    public void notify(String message) {
-        System.out.println("Notification for " + username + ": " + message);
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

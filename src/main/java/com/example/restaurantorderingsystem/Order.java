@@ -1,3 +1,5 @@
+package com.example.restaurantorderingsystem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +26,8 @@ public class Order {
         }
     }
 
-    public void placeOrder(List<MenuItem> menuItems) {
-        items.addAll(menuItems);
+    public void placeOrder(List<MenuItem> selectedItems) {
+        items.addAll(selectedItems);
         double total = calculateTotal();
         notifyObservers("Your order has been placed. Total amount: $" + total);
     }
@@ -36,5 +38,14 @@ public class Order {
             total += item.getPrice();
         }
         return total;
+    }
+
+    public String getOrderDetails() {
+        StringBuilder details = new StringBuilder();
+        for (MenuItem item : items) {
+            details.append(item.toString()).append("\n");
+        }
+        details.append("Total: $").append(calculateTotal());
+        return details.toString();
     }
 }
