@@ -1,20 +1,20 @@
 package com.example.restaurantorderingsystem;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuList {
-    private ObservableList<MenuItem> items;
+    private List<MenuItem> items;
 
     public MenuList() {
-        items = FXCollections.observableArrayList();  // Using ObservableList for compatibility with ListView
+        items = new ArrayList<>();
     }
 
-    public void addMenuItem(MenuItem menuItem) {
-        items.add(menuItem);
+    public void addMenuItem(MenuItem item) {
+        items.add(item);
     }
 
-    public ObservableList<MenuItem> getItems() {
-        return items;
+    public MenuItem[] getItems() {
+        return items.toArray(new MenuItem[0]);
     }
 }

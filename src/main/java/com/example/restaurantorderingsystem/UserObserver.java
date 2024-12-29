@@ -9,6 +9,8 @@ public class UserObserver implements OrderObserver {
 
     @Override
     public void update(String message) {
-        System.out.println("User " + user.getUsername() + " received update: " + message);
+        // Here you can implement how the user will receive updates.
+        // For example, you could print to the console or update a UI component.
+        System.out.println("User  " + user.getUsername() + " received update: " + message);
     }
 }
